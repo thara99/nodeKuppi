@@ -29,6 +29,7 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-const crypto = require("crypto");
-const secret = crypto.randomBytes(64).toString("hex");
-console.log(secret);
+//generate jwt secret key
+// const crypto = require("crypto");
+// const secret = crypto.randomBytes(64).toString("hex");
+// console.log(secret);
