@@ -1,39 +1,39 @@
 const express = require("express");
 const router = express.Router();
-const shopsController = require("../Controllers/shopsController");
+const shopsController = require("../Controllers/itemController");
 const authMiddleware = require("../Middleware/authMiddleware");
 const authUserLevelMiddleware = require("../Middleware/authUserLevelMiddleware");
 
 // CRUD Routes with authentication middleware
 router.get(
-  "/shops",
+  "/items",
   authMiddleware,
   authUserLevelMiddleware,
-  shopsController.getAllShops
+  shopsController.getAllItems
 ); // Read all
 router.get(
-  "/shops/:id",
+  "/items/:id",
   authMiddleware,
   authUserLevelMiddleware,
-  shopsController.getShopById
+  shopsController.getItemById
 ); // Read one
 router.post(
-  "/shops",
+  "/items",
   authMiddleware,
   authUserLevelMiddleware,
-  shopsController.createShop
+  shopsController.createItem
 ); // Create
 router.put(
-  "/shops/:id",
+  "/items/:id",
   authMiddleware,
   authUserLevelMiddleware,
-  shopsController.updateShop
+  shopsController.updateItem
 ); // Update
 router.delete(
-  "/shops/:id",
+  "/items/:id",
   authMiddleware,
   authUserLevelMiddleware,
-  shopsController.deleteShop
+  shopsController.deleteItem
 ); // Delete
 
 module.exports = router;
